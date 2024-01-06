@@ -81,7 +81,7 @@ Admin page:
 ----![image](https://github.com/mfkimbell/django-serverless/assets/107063397/2d415601-02d9-4aee-833f-a53cb2b51007)
 
 django utlizies sqlite database by default.  
-``` json
+``` python
 DATABASES = {
 
     'default': {
@@ -102,3 +102,6 @@ DATABASES = {
 
 }
 ```
+creating admin, then logging into admin on webapp:
+
+![image](https://github.com/mfkimbell/django-serverless/assets/107063397/d8e6f5d5-3ff4-42b2-bbd5-7aabdc6901c7)
