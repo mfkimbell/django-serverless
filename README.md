@@ -81,3 +81,24 @@ Admin page:
 ----![image](https://github.com/mfkimbell/django-serverless/assets/107063397/2d415601-02d9-4aee-833f-a53cb2b51007)
 
 django utlizies sqlite database by default.  
+``` json
+DATABASES = {
+
+    'default': {
+
+        'ENGINE': 'django.db.backends.postgresql',
+
+        'NAME': 'demo_db', 
+
+        'USER': 'mfkimbell',
+
+        'PASSWORD': 'password',
+
+        'HOST' : 'database-1.cpkm2gqmy8u4.us-east-2.rds.amazonaws.com',
+
+        'PORT': '5432',
+
+    }
+
+}
+```
