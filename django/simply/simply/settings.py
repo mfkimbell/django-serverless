@@ -75,39 +75,36 @@ WSGI_APPLICATION = 'simply.wsgi.application'
 
 # SQlite Database
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
-# PostgreSQL Database
+#PostgreSQL Database
 
-'''
 DATABASES = {
 
     'default': {
 
         'ENGINE': 'django.db.backends.postgresql',
 
-        'NAME': '', # - Enter your database name HERE
+        'NAME': 'demo_db', 
 
-        'USER': '', # - Enter your User HERE
+        'USER': 'mfkimbell',
 
-        'PASSWORD': '', # - Enter your RDS password HERE
+        'PASSWORD': 'password',
 
-        'HOST' : '', # - Enter your RDS host name HERE
+        'HOST' : 'database-1.cpkm2gqmy8u4.us-east-2.rds.amazonaws.com',
 
         'PORT': '5432',
 
-
     }
 
-
 }
-'''
+
 
 
 
@@ -164,18 +161,17 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Amazon S3 configuration 
 
-'''
-AWS_ACCESS_KEY_ID = "" # - Enter your AWS Access Key ID HERE
-AWS_SECRET_ACCESS_KEY = "" # - Enter your AWS Secret Access Key ID HERE
+AWS_ACCESS_KEY_ID = "AKIAW3MEFFIRVJ2I7SLG" # - Enter your AWS Access Key ID HERE
+AWS_SECRET_ACCESS_KEY = "yeRJ+rPApbIoL0mdTdwAkY6Okc2IA3/DaVMf0J62" # - Enter your AWS Secret Access Key ID HERE
 
-AWS_STORAGE_BUCKET_NAME = '' # - Enter your S3 bucket name HERE
+AWS_STORAGE_BUCKET_NAME = 'django-static-151' # - Enter your S3 bucket name HERE
 
 # Django 4.2 >
 STORAGES = {"staticfiles": {"BACKEND": "storages.backends.s3boto3.S3StaticStorage"}}
 
 # Django < 4.2 
 
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 
 
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
@@ -188,7 +184,7 @@ AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
-'''
+
 
 
 
