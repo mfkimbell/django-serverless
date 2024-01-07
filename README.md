@@ -134,3 +134,5 @@ COPY . .
 
 CMD python manage.py runserver 0.0.0.0:8000
 ```
+Here we can see the application successfully running on the container:
+![image](https://github.com/mfkimbell/django-serverless/assets/107063397/fe584e64-25b3-4f50-9aae-efbe7cd32861)
