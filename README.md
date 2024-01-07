@@ -6,6 +6,7 @@
 * Boto3 - programatically access S3 bucket in Django application
 * CertificateManager - SSL certificate for registering domains as 'https'
 * Django
+* Django-environ - setting up enviornment variables for secret values
 * Django-storages
 * Docker - containerization of application
 * ECR - container registry for storing application image
