@@ -168,3 +168,9 @@ Load Balancer --> Listener --> Target Group --> Application
 
 ![image](https://github.com/mfkimbell/django-serverless/assets/107063397/b018055d-d96b-464b-b0d7-174a0381642b)
 
+And we can see all of the Route53 routing:
+
+![image](https://github.com/mfkimbell/django-serverless/assets/107063397/def449a3-a732-4e6b-b053-93ec727e165c)
+
+The Type A records point the the Load Balancer, and our CNAME records are used for SSL certificate validation.
+
