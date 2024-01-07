@@ -1,14 +1,21 @@
 # django-serverless
 
 ## Tools used:
+
+* AWS CLI - programatically upload files
+* Boto3 - programatically access S3 bucket in Django application
+* CertificateManager - SSL certificate for registering domains as 'https'
 * Django
 * Django-storages
-* Boto3 - programatically access S3 bucket in Django application
-* ECS
-* Fargate
-* AWS CLI - programatically upload files
+* Docker - containerization of application
+* ECR - container registry for storing application image
+* ECS - container management
+* Fargate - serverless launch type for running docker container
+* Guinicorn - wsgi http server used to build connection between django application and AWS
 * psycopg2 - managing postgres database
-* postgres - replacing default sqlite database-
+* postgres - replacing default sqlite database
+* route53 - custom domain names for webapp
+
 
 ## To Run Locally:
 
@@ -102,6 +109,43 @@ DATABASES = {
 
 }
 ```
-creating admin, then logging into admin on webapp:
+Creating admin, then logging into admin on webapp. I personally never utilized these features, but it can be used to manage data in the django application:
 
 ![image](https://github.com/mfkimbell/django-serverless/assets/107063397/d8e6f5d5-3ff4-42b2-bbd5-7aabdc6901c7)
+
+
+bought domain name `mitchell-django.net`
+![image](https://github.com/mfkimbell/django-serverless/assets/107063397/e90c00ef-34c4-446c-9cdf-6e950810445a)
+
+and we add the domain to our settings.py
+
+```python
+ALLOWED_HOSTS = ['www.mitchell-django.com','mitchell-django.com','*']
+CSRF_TRUSTED_ORIGINS = ['https://www.mitchell-django.com', 'https://mitchell-django.com']
+```
+
+Now we create the Dockerfile:
+-I add PYTHONUNBUFFERED=1 since it will send python output to our container logs
+-I also specify a port number so it can be accessed outside the container
+```python
+FROM --platform=linux/amd64 python:3.11-bullseye
+
+ENV PYTHONUNBUFFERED=1
+
+WORKDIR /simply
+
+COPY requirements.txt .
+
+RUN pip3 install -r requirements.txt
+
+COPY . .
+
+CMD python manage.py runserver 0.0.0.0:8000
+```
+Here we can see the application successfully running on the container:
+![image](https://github.com/mfkimbell/django-serverless/assets/107063397/fe584e64-25b3-4f50-9aae-efbe7cd32861)
+
+
+Fargate uses dynamic IPs, that's why we use '*'. 
+
+-ECS tasks come from "task definitions", which are json templates that tell it what to do
