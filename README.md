@@ -1,15 +1,20 @@
 # django-serverless
 
 ## Tools used:
+
+* AWS CLI - programatically upload files
+* Boto3 - programatically access S3 bucket in Django application
+* CertificateManager - SSL certificate for registering domains as 'https'
 * Django
 * Django-storages
-* Boto3 - programatically access S3 bucket in Django application
+* Docker - containerization of application
 * ECS
 * Fargate
-* AWS CLI - programatically upload files
+* Guinicorn - wsgi http server used to build connection between django application and AWS
 * psycopg2 - managing postgres database
 * postgres - replacing default sqlite database
-* route53 - custom domain name
+* route53 - custom domain names for webapp
+
 
 ## To Run Locally:
 
@@ -103,7 +108,7 @@ DATABASES = {
 
 }
 ```
-creating admin, then logging into admin on webapp:
+Creating admin, then logging into admin on webapp. I personally never utilized these features, but it can be used to manage data in the django application:
 
 ![image](https://github.com/mfkimbell/django-serverless/assets/107063397/d8e6f5d5-3ff4-42b2-bbd5-7aabdc6901c7)
 
@@ -111,4 +116,5 @@ creating admin, then logging into admin on webapp:
 bought domain name `mitchell-django.net`
 ![image](https://github.com/mfkimbell/django-serverless/assets/107063397/e90c00ef-34c4-446c-9cdf-6e950810445a)
 
-
+Now we create the Dockerfile:
+-I add PYTHONUNBUFFERED=1 since it will send python output to our container logs
