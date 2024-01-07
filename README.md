@@ -43,11 +43,16 @@ And you can write `deactivate` to shut down the virtual environment
 ![image](https://github.com/mfkimbell/django-serverless/assets/107063397/b3c797c5-6960-42dd-9475-eca64f863bff)
 
 -created user "mitchell" with access to that role
+
 -created account alias "mitchell-django"
+
 -new sign in link "https://mitchell-django.signin.aws.amazon.com/console"
+
 -create access key for IAM user
+
 -install aws cli
 
+I create a bucket policy so that anyone can call getObject in my S3 bucket:
 
 ``` json
 {
@@ -85,10 +90,8 @@ Here we can see my static files are coming from AWS
 
 I manually added these files, but it can be done programmatically. 
 
-Admin page:
-----![image](https://github.com/mfkimbell/django-serverless/assets/107063397/2d415601-02d9-4aee-833f-a53cb2b51007)
+Django utlizies sqlite database by default, so I change it to PostgreSQL.
 
-django utlizies sqlite database by default.  
 ``` python
 DATABASES = {
 
