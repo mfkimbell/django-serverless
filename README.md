@@ -117,6 +117,13 @@ Creating admin, then logging into admin on webapp. I personally never utilized t
 bought domain name `mitchell-django.net`
 ![image](https://github.com/mfkimbell/django-serverless/assets/107063397/e90c00ef-34c4-446c-9cdf-6e950810445a)
 
+and we add the domain to our settings.py
+
+```python
+ALLOWED_HOSTS = ['www.mitchell-django.com','mitchell-django.com','*']
+CSRF_TRUSTED_ORIGINS = ['https://www.mitchell-django.com', 'https://mitchell-django.com']
+```
+
 Now we create the Dockerfile:
 -I add PYTHONUNBUFFERED=1 since it will send python output to our container logs
 -I also specify a port number so it can be accessed outside the container
