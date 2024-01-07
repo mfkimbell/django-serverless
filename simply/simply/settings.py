@@ -19,9 +19,9 @@ SECRET_KEY = 'django-insecure-)6944c_+j+4nor8$!%)jrwtuy9ksi(69rx5dneoef=q@%oc)+f
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['www.mitchell-django.com','mitchell-django.com','*']
+ALLOWED_HOSTS = ['www.mitchell-django.net','mitchell-django.net','*']
 
-CSRF_TRUSTED_ORIGINS = ['https://www.mitchell-django.com', 'https://mitchell-django.com']
+CSRF_TRUSTED_ORIGINS = ['https://www.mitchell-django.net', 'https://mitchell-django.net']
 
 # Application definition
 
