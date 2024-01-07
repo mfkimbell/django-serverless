@@ -165,3 +165,6 @@ Load Balancer --> Listener --> Target Group --> Application
 ![image](https://github.com/mfkimbell/django-serverless/assets/107063397/9ca34762-7f2b-4ed0-a02f-e83478f89401)
 
 ![image](https://github.com/mfkimbell/django-serverless/assets/107063397/3b4ad670-3e42-49a8-ae04-39b4b0aab240)
+
+![image](https://github.com/mfkimbell/django-serverless/assets/107063397/b018055d-d96b-464b-b0d7-174a0381642b)
+
