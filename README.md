@@ -109,5 +109,6 @@ creating admin, then logging into admin on webapp:
 
 
 bought domain name `mitchell-django.net`
+![image](https://github.com/mfkimbell/django-serverless/assets/107063397/e90c00ef-34c4-446c-9cdf-6e950810445a)
 
 
