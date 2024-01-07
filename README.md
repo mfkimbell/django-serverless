@@ -164,7 +164,11 @@ I make a Security Group `DemoAppLB-SG`, which I attack to a Load Balancer `DemoA
 Load Balancer --> Listener --> Target Group --> Application
 ![image](https://github.com/mfkimbell/django-serverless/assets/107063397/9ca34762-7f2b-4ed0-a02f-e83478f89401)
 
-![image](https://github.com/mfkimbell/django-serverless/assets/107063397/3b4ad670-3e42-49a8-ae04-39b4b0aab240)
+Currently, I have it set up so that anyone trying to connect via HTTP will be automatically redirected to HTTPS:
+
+![image](https://github.com/mfkimbell/django-serverless/assets/107063397/d8b5c9ac-1e5e-4203-996d-bf964a50fb0b)
+
+We can see the target group on port 8000:
 
 ![image](https://github.com/mfkimbell/django-serverless/assets/107063397/b018055d-d96b-464b-b0d7-174a0381642b)
 
