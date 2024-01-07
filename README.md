@@ -4,18 +4,18 @@
 
 * AWS CLI - programatically upload files
 * Boto3 - programatically access S3 bucket in Django application
-* CertificateManager - SSL certificate for registering domains as 'https'
-* Django
+* Certificate Manager - SSL certificate for using 'https'
+* Django -
 * Django-environ - setting up enviornment variables for secret values
-* Django-storages
+* Django-storages -
 * Docker - containerization of application
 * ECR - container registry for storing application image
 * ECS - container management
 * Fargate - serverless launch type for running docker container
 * Guinicorn - wsgi http server used to build connection between django application and AWS
-* psycopg2 - managing postgres database
-* postgres - replacing default sqlite database
-* route53 - custom domain names for webapp
+* Psycopg2 - managing postgres database
+* Postgres - replacing default sqlite database
+* Route53 - custom domain names for webapp
 
 
 ## To Run Locally:
@@ -162,3 +162,6 @@ I use an application load balancer because this applicaiton uses https.
 I make a Security Group `DemoAppLB-SG`, which I attack to a Load Balancer `DemoAppLB`. I add to the Load Balancer's listener Target Group `DemoAppTG` and I direct to IP since I plan to use Fargate. I specify the Target Group to direct to HTTP port 8000 so our Load Balancer can communicate to the docker container (which if you remember, runs on port 8000). 
 
 Load Balancer --> Listener --> Target Group --> Application
+![image](https://github.com/mfkimbell/django-serverless/assets/107063397/9ca34762-7f2b-4ed0-a02f-e83478f89401)
+
+![image](https://github.com/mfkimbell/django-serverless/assets/107063397/3b4ad670-3e42-49a8-ae04-39b4b0aab240)
