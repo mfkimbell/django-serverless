@@ -202,3 +202,13 @@ Now I need to create a Task Definition. I create a container named `DemoAppConta
 ![image](https://github.com/mfkimbell/django-serverless/assets/107063397/2abe5779-caea-4d59-af89-87002adab17d)
 
 
+
+I also create an ECS cluster `DemoAppCluster`. Each instance in a cluster is called a node. Clusters can contain a mix of tasks that are hosted on AWS Fargate, Amazon EC2 instances, or external instances. You can monitor the creation of the cluster in **CloudFormation**. 
+
+A **Service** is used to guarantee that you always have some number of Tasks running at all times. If a Task's container exits due to an error, or the underlying EC2 instance fails and is replaced, the ECS Service will replace the failed Task. This is why we create Clusters so that the Service has plenty of resources in terms of CPU, Memory and Network ports to use. To us it doesn't really matter which instance Tasks run on so long as they run. A Service configuration references a Task definition. A Service is responsible for creating Tasks. I create a service called `DemoAppService` which will use the Load Balancer and Target groups previously created. 
+
+![image](https://github.com/mfkimbell/django-serverless/assets/107063397/8b0bc3c8-143d-48ad-a1d9-f6288c5a9272)
+
+And here we can see my application running on `www.mitchell-django.net`:
+
+![image](https://github.com/mfkimbell/django-serverless/assets/107063397/6c1d090d-a27e-4a15-8ae0-5719bb5b93ca)
