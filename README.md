@@ -8,7 +8,8 @@
 * Fargate
 * AWS CLI - programatically upload files
 * psycopg2 - managing postgres database
-* postgres - replacing default sqlite database-
+* postgres - replacing default sqlite database
+* route53 - custom domain name
 
 ## To Run Locally:
 
@@ -105,3 +106,8 @@ DATABASES = {
 creating admin, then logging into admin on webapp:
 
 ![image](https://github.com/mfkimbell/django-serverless/assets/107063397/d8e6f5d5-3ff4-42b2-bbd5-7aabdc6901c7)
+
+
+bought domain name `mitchell-django.net`
+
+
