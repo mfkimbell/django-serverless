@@ -117,6 +117,10 @@ Creating admin, then logging into admin on webapp. I personally never utilized t
 
 bought domain name `mitchell-django.net`
 ![image](https://github.com/mfkimbell/django-serverless/assets/107063397/e90c00ef-34c4-446c-9cdf-6e950810445a)
+Registered the domains in Certificate Manager
+![image](https://github.com/mfkimbell/django-serverless/assets/107063397/aa6db38a-ea1f-47d4-abaa-af588f880eb6)
+Added CNAME records to Route53
+![image](https://github.com/mfkimbell/django-serverless/assets/107063397/4cf37b38-edf4-49f6-b77b-e2d59413736d)
 
 
 and we add the domain to our settings.py
@@ -155,6 +159,6 @@ Fargate uses dynamic IPs, that's why we use '*'.
 
 I use an application load balancer because this applicaiton uses https.
 
-I make a Security Group `DemoAppLB-SG`, which I attack to a Load Balancer `DemoAppLB`. I add to the Load Balancer's listener Target Group `DemoAppTG` and I direct to IP since I plan to use Fargate. I direct it to HTTP port 8000 so our Load Balancer can communicate to the docker container (which if you remember, runs on port 8000). 
+I make a Security Group `DemoAppLB-SG`, which I attack to a Load Balancer `DemoAppLB`. I add to the Load Balancer's listener Target Group `DemoAppTG` and I direct to IP since I plan to use Fargate. I specify the Target Group to direct to HTTP port 8000 so our Load Balancer can communicate to the docker container (which if you remember, runs on port 8000). 
 
-
+Load Balancer --> Listener --> Target Group --> Application
