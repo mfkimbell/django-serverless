@@ -118,3 +118,18 @@ bought domain name `mitchell-django.net`
 
 Now we create the Dockerfile:
 -I add PYTHONUNBUFFERED=1 since it will send python output to our container logs
+```docker
+FROM --platform=linux/amd64 python:3.11-bullseye
+
+ENV PYTHONUNBUFFERED=1
+
+WORKDIR /simply
+
+COPY requirements.txt .
+
+RUN pip3 install -r requirements.txt
+
+COPY . .
+
+CMD python manage.py runserver 0.0.0.0:8000
+```
