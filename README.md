@@ -156,6 +156,13 @@ CMD python manage.py runserver 0.0.0.0:8000
 Here we can see the application successfully running on the container:
 ![image](https://github.com/mfkimbell/django-serverless/assets/107063397/fe584e64-25b3-4f50-9aae-efbe7cd32861)
 
+Next I upload my container to ECR with the following commands:
+
+```
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 471112952355.dkr.ecr.us-east-2.amazonaws.com
+docker tag simply2:latest 471112952355.dkr.ecr.us-east-1.amazonaws.com/my-first-repository:latest
+docker push 471112952355.dkr.ecr.us-east-1.amazonaws.com/my-first-repository:latest
+```
 
 Fargate uses dynamic IPs, that's why we use '*'. 
 
@@ -182,4 +189,6 @@ And we can see all of the Route53 routing:
 ![image](https://github.com/mfkimbell/django-serverless/assets/107063397/def449a3-a732-4e6b-b053-93ec727e165c)
 
 The Type A records point the the Load Balancer, and our CNAME records are used for SSL certificate validation.
+
+Now I need to create a Task Definition. I create a container named `DemoAppContainer` and link it to the Container URI that I uploaded to ECR.
 
