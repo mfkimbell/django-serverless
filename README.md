@@ -8,8 +8,9 @@
 * Django
 * Django-storages
 * Docker - containerization of application
-* ECS
-* Fargate
+* ECR - container registry for storing application image
+* ECS - container management
+* Fargate - serverless launch type for running docker container
 * Guinicorn - wsgi http server used to build connection between django application and AWS
 * psycopg2 - managing postgres database
 * postgres - replacing default sqlite database
@@ -136,3 +137,8 @@ CMD python manage.py runserver 0.0.0.0:8000
 ```
 Here we can see the application successfully running on the container:
 ![image](https://github.com/mfkimbell/django-serverless/assets/107063397/fe584e64-25b3-4f50-9aae-efbe7cd32861)
+
+
+Fargate uses dynamic IPs, that's why we use '*'. 
+
+-ECS tasks come from "task definitions", which are json templates that tell it what to do
