@@ -1,7 +1,10 @@
 
 import os
-
+import environ
 from pathlib import Path
+
+env=environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -14,13 +17,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-)6944c_+j+4nor8$!%)jrwtuy9ksi(69rx5dneoef=q@%oc)+f'
 
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['www.mitchell-django.com','mitchell-django.com','*']
 
-#CSRF_TRUSTED_ORIGINS = ['https://www.domain.com', 'https://domain.com']
-
+CSRF_TRUSTED_ORIGINS = ['https://www.mitchell-django.com', 'https://mitchell-django.com']
 
 # Application definition
 
@@ -161,8 +162,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Amazon S3 configuration 
 
-AWS_ACCESS_KEY_ID = "AKIAW3MEFFIRVJ2I7SLG" # - Enter your AWS Access Key ID HERE
-AWS_SECRET_ACCESS_KEY = "yeRJ+rPApbIoL0mdTdwAkY6Okc2IA3/DaVMf0J62" # - Enter your AWS Secret Access Key ID HERE
+AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
 
 AWS_STORAGE_BUCKET_NAME = 'django-static-151' # - Enter your S3 bucket name HERE
 
