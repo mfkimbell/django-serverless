@@ -199,3 +199,6 @@ The Type A records point the the Load Balancer, and our CNAME records are used f
 
 Now I need to create a Task Definition. I create a container named `DemoAppContainer` and link it to the Container URI that I uploaded to ECR.
 
+![image](https://github.com/mfkimbell/django-serverless/assets/107063397/2abe5779-caea-4d59-af89-87002adab17d)
+
+
