@@ -82,13 +82,15 @@ STORAGES = {"staticfiles": {"BACKEND": "storages.backends.s3boto3.S3StaticStorag
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 ```
 
-![image](https://github.com/mfkimbell/django-serverless/assets/107063397/dd3b10d2-3b28-414e-a799-f29bdb67fc42)
-
-Here we can see my static files are coming from AWS
+I manually added these files, but it can be done programmatically: 
 
 ![image](https://github.com/mfkimbell/django-serverless/assets/107063397/bd85e9e0-90bd-467f-bedf-2195c88d196b)
 
-I manually added these files, but it can be done programmatically. 
+Here we can see my static files are coming from AWS:
+
+![image](https://github.com/mfkimbell/django-serverless/assets/107063397/dd3b10d2-3b28-414e-a799-f29bdb67fc42)
+
+
 
 Django utlizies sqlite database by default, so I change it to PostgreSQL.
 
