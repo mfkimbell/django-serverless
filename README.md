@@ -2,20 +2,21 @@
 
 ## Tools used:
 
-* AWS CLI - programatically upload files
-* Boto3 - programatically access S3 bucket in Django application
-* Certificate Manager - SSL certificate for using 'https'
-* Django -
-* Django-environ - setting up enviornment variables for secret values
-* Django-storages -
-* Docker - containerization of application
-* ECR - container registry for storing application image
-* ECS - container management
-* Fargate - serverless launch type for running docker container
-* Guinicorn - wsgi http server used to build connection between django application and AWS
-* Psycopg2 - managing postgres database
-* Postgres - replacing default sqlite database
-* Route53 - custom domain names for webapp
+* `AWS CLI` - Programatically upload files
+* `Boto3` - Programatically access S3 bucket in Django application
+* `Certificate Manager` - SSL certificate for using 'https'
+* `Django` - Python framework for building the web application
+* `Django-environ` - Setting up enviornment variables for secret values
+* `Django-storages` - Allows for uploading files to s3
+* `Docker` - Containerization of application
+* `ECR` - Container registry for storing application image
+* `ECS` - Container management
+* `Fargate` - Serverless launch type for running docker container
+* `Gunicorn` - Wsgi http server used to build connection between django application and AWS
+* `Postgres` - Managing user login information
+* `Psycopg2` - Managing postgres database
+* `RDS` - Replacing default sqlite database with PostgreSQL database on AWS
+* `Route53` - Custom domain names for webapp
 
 
 ## To Run Locally:
@@ -180,7 +181,11 @@ I use an application load balancer because this applicaiton uses https.
 
 I make a Security Group `DemoAppLB-SG`, which I attack to a Load Balancer `DemoAppLB`. I add to the Load Balancer's listener Target Group `DemoAppTG` and I direct to IP since I plan to use Fargate. I specify the Target Group to direct to HTTP port 8000 so our Load Balancer can communicate to the docker container (which if you remember, runs on port 8000). 
 
+If you want to enable session cookies and cache user sessions you just need to enable "sticky sessions" on the Target Group.
+
 Load Balancer --> Listener --> Target Group --> Application
+
+
 ![image](https://github.com/mfkimbell/django-serverless/assets/107063397/9ca34762-7f2b-4ed0-a02f-e83478f89401)
 
 Currently, I have it set up so that anyone trying to connect via HTTP will be automatically redirected to HTTPS:
