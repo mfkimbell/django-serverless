@@ -1,4 +1,4 @@
-# django-serverless
+# django-serverless-webapp
 
 ## Tools used:
 
