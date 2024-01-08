@@ -209,6 +209,12 @@ A **Service** is used to guarantee that you always have some number of Tasks run
 
 ![image](https://github.com/mfkimbell/django-serverless/assets/107063397/8b0bc3c8-143d-48ad-a1d9-f6288c5a9272)
 
+We can see the launch type is specifically Fargate:
+![image](https://github.com/mfkimbell/django-serverless/assets/107063397/14f1803f-1587-4562-bfdf-68705dddcbda)
+
+
 And here we can see my application running on `www.mitchell-django.net`:
 
 ![image](https://github.com/mfkimbell/django-serverless/assets/107063397/6c1d090d-a27e-4a15-8ae0-5719bb5b93ca)
+
+A
