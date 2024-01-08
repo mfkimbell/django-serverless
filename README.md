@@ -1,6 +1,10 @@
 # django-serverless-webapp
 
+<img width="800" alt="django-map" src="https://github.com/mfkimbell/django-serverless-webapp/assets/107063397/a0f16d78-dc34-4b2b-b7ca-b3c8eec7bb99">
+
 ## Tools used:
+
+
 
 * `AWS CLI` - Programatically upload files
 * `Boto3` - Programatically access S3 bucket in Django application
